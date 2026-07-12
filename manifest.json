@@ -26,22 +26,7 @@
     "offpath.q1",
     "offpath.q2",
     "dormancy.flag",
-    "dormancy.junction",
-    "dark.wisdom.api",
-    "dark.wisdom.page"
+    "dormancy.junction"
   ],
-  "dark_surfaces": [
-    {
-      "id": "dark.wisdom.api",
-      "path": "/api/wisdom/panels",
-      "expect_status": "503",
-      "expect_body": "feature_flag_off|wisdom_offline"
-    },
-    {
-      "id": "dark.wisdom.page",
-      "path": "/w/00000000000000000000000000000000",
-      "expect_status": "503",
-      "expect_body": "NOT YET"
-    }
-  ]
+  "dark_surfaces": []
 }
