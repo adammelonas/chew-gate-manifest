@@ -1,0 +1,47 @@
+{
+  "version": 1,
+  "worker": "chew-iq-proxy",
+  "pinned_at_commit": "2e33c12-gate-pinning-v21",
+  "gates": {
+    "scripts/deploy.sh": "532560da624feb501f36269587bba44de65201e73dfa01b3cca2e14578214212",
+    "scripts/postdeploy-probes.sh": "a0698ef88b60b8eb8b3e6b1c8b085505abfe34be3541eac64e57a214fe71380f",
+    "scripts/rollback.sh": "0adec07966aa3a93e0e1770509a368b95a8d5581c093976012daf0881620fb04",
+    "scripts/gate-migration.sh": "81a8897abc1aa302a834f8ca9b5e2191a8f632867c892f0b6c7d33a407e66734",
+    "scripts/lib/assert-required-checks.mjs": "7ac1f03cde6644e08be675b82ee4cfa6683975a7dd41c72e0fcbbd70f4d6eb16",
+    "scripts/lib/runner-guard.mjs": "ea756db7258a56dd5de0de80590f7e2bcc4c255eb52cb9875a98bfc4c1779bc8"
+  },
+  "runners": {
+    "scripts/ingest_runner.mjs": "e9c4023f35096f6234f12e968d50cfa7cee7d82f2917f17743ffe81c5bbb5b5e"
+  },
+  "required_checks": [
+    "ship.health",
+    "ship.version.unauth401",
+    "ship.version.authed",
+    "ship.spa",
+    "sense.knowledge",
+    "build.ai",
+    "build.ia",
+    "build.team-intel.live",
+    "offpath.q0",
+    "offpath.q1",
+    "offpath.q2",
+    "dormancy.flag",
+    "dormancy.junction",
+    "dark.wisdom.api",
+    "dark.wisdom.page"
+  ],
+  "dark_surfaces": [
+    {
+      "id": "dark.wisdom.api",
+      "path": "/api/wisdom/panels",
+      "expect_status": "503",
+      "expect_body": "feature_flag_off|wisdom_offline"
+    },
+    {
+      "id": "dark.wisdom.page",
+      "path": "/w/00000000000000000000000000000000",
+      "expect_status": "503",
+      "expect_body": "NOT YET"
+    }
+  ]
+}

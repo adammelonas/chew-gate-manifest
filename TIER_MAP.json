@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "default_tier": 3,
+  "rules": [
+    { "match": { "flag_value_changed": true }, "tier": 3 },
+    { "match": { "verb": "dns" }, "tier": 3 },
+    { "match": { "verb": "secret_rotation" }, "tier": 3 },
+    { "match": { "verb": "retention_change" }, "tier": 3 },
+    { "match": { "verb": "migrate", "destructive": true }, "tier": 3 },
+    { "match": { "verb": "gate_edit" }, "tier": 3 },
+
+    { "match": { "verb": "migrate", "store_empty": true, "store_live_bound": false }, "tier": 1 },
+    { "match": { "verb": "migrate", "store_empty": false }, "tier": 2 },
+    { "match": { "verb": "migrate", "store_live_bound": true }, "tier": 2 },
+
+    { "match": { "resource": "kv:d10053f5929f4175a936eee8d9323ca5", "verb": "put" }, "tier": 2 },
+    { "match": { "resource": "kv:6d3bc067d8d04d1faad03da2dd7b6f90", "verb": "put" }, "tier": 2 },
+    { "match": { "verb": "kv_put" }, "tier": 2 },
+    { "match": { "verb": "binding_change" }, "tier": 2 },
+    { "match": { "verb": "route_change" }, "tier": 2 },
+    { "match": { "verb": "deploy", "route_touched": true }, "tier": 2 },
+    { "match": { "verb": "deploy", "flag_value_changed": false, "route_touched": false }, "tier": 2 },
+
+    { "match": { "resource": "api:/api/ingest", "verb": "append", "runner_pinned": true }, "tier": 1 },
+    { "match": { "verb": "git_commit" }, "tier": 1 },
+    { "match": { "verb": "doc_write" }, "tier": 1 }
+  ],
+  "interim_note_machine_readable": {
+    "deploy_tier_after_ratification": 1,
+    "condition": "flag_value_changed=false AND route_touched=false AND gates_pinned=true"
+  }
+}
