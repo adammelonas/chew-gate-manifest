@@ -3,8 +3,8 @@
   "worker": "chew-iq-proxy",
   "pinned_at_commit": "2e33c12-gate-pinning-v21",
   "gates": {
-    "scripts/deploy.sh": "532560da624feb501f36269587bba44de65201e73dfa01b3cca2e14578214212",
-    "scripts/postdeploy-probes.sh": "a0698ef88b60b8eb8b3e6b1c8b085505abfe34be3541eac64e57a214fe71380f",
+    "scripts/deploy.sh": "12c787cf0552a364af6100086736328b1afa246f31ff7529e4e7102180b870c3",
+    "scripts/postdeploy-probes.sh": "6d71758df7973f3b7ce045761973ce2d81f2ba801e10addb309aee08e9ca26a7",
     "scripts/rollback.sh": "0adec07966aa3a93e0e1770509a368b95a8d5581c093976012daf0881620fb04",
     "scripts/gate-migration.sh": "81a8897abc1aa302a834f8ca9b5e2191a8f632867c892f0b6c7d33a407e66734",
     "scripts/lib/assert-required-checks.mjs": "7ac1f03cde6644e08be675b82ee4cfa6683975a7dd41c72e0fcbbd70f4d6eb16",
