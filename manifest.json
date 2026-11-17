@@ -1,7 +1,7 @@
 {
   "version": 1,
   "worker": "chew-iq-proxy",
-  "pinned_at_commit": "2e33c12-gate-pinning-v21",
+  "pinned_at_commit": "cdac324-manual-deploy",
   "gates": {
     "scripts/deploy.sh": "12c787cf0552a364af6100086736328b1afa246f31ff7529e4e7102180b870c3",
     "scripts/postdeploy-probes.sh": "6d71758df7973f3b7ce045761973ce2d81f2ba801e10addb309aee08e9ca26a7",
@@ -25,8 +25,11 @@
     "offpath.q0",
     "offpath.q1",
     "offpath.q2",
-    "dormancy.flag",
-    "dormancy.junction"
+    "retrieval.flag",
+    "retrieval.offtopic",
+    "retrieval.ontopic",
+    "retrieval.knowledge-scoped"
   ],
+  "expected_rag_v2": true,
   "dark_surfaces": []
 }
